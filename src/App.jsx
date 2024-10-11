@@ -36,11 +36,14 @@ export default function App() {
     return diceArray
   }
 
-
-
   const diceElements = dice.map(die => {
     return (
-      <Die key={die.id} value={die.value} isHeld={die.isHeld} holdDice={holdDice} id={die.id} />
+      <Die
+        key={die.id}
+        value={die.value}
+        isHeld={die.isHeld}
+        holdDice={holdDice}
+        id={die.id} />
     )
   })
 
@@ -72,17 +75,17 @@ export default function App() {
 
   return (
     <main>
+
       <div className="inner-main">
         {tenzies && <Confetti />}
         <h1>Tenzies</h1>
         <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+
         <div className="dice-container">
           {diceElements}
         </div>
 
-
         <button className="roll-btn" onClick={rollDice}> {tenzies ? "New Game" : "Roll"} </button>
-
       </div>
 
     </main>
